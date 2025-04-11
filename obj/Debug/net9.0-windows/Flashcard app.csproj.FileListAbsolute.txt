@@ -1,0 +1,51 @@
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\bin\Debug\net9.0-windows\Flashcard app.exe
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\bin\Debug\net9.0-windows\Flashcard app.deps.json
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\bin\Debug\net9.0-windows\Flashcard app.runtimeconfig.json
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\bin\Debug\net9.0-windows\Flashcard app.dll
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\bin\Debug\net9.0-windows\Flashcard app.pdb
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Form_Main.resources
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.csproj.GenerateResource.cache
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.GeneratedMSBuildEditorConfig.editorconfig
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.AssemblyInfoInputs.cache
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.AssemblyInfo.cs
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.csproj.CoreCompileInputs.cache
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.dll
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\refint\Flashcard app.dll
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.pdb
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.genruntimeconfig.cache
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\ref\Flashcard app.dll
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\bin\Debug\net9.0-windows\FontAwesome.Sharp.dll
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.csproj.AssemblyReference.cache
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Properties.Resources.resources
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcar.4ECE7F27.Up2Date
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Form_AnswerFolders.resources
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Form_CheckOffForm.resources
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Home.resources
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Form_StudyMode.resources
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Form_ListQuestion.resources
+E:\Study\Save Visual Studio\C#\Flashcard app\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.sourcelink.json
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\bin\Debug\net9.0-windows\Flashcard app.exe
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\bin\Debug\net9.0-windows\Flashcard app.deps.json
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\bin\Debug\net9.0-windows\Flashcard app.runtimeconfig.json
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\bin\Debug\net9.0-windows\Flashcard app.dll
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\bin\Debug\net9.0-windows\Flashcard app.pdb
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\bin\Debug\net9.0-windows\FontAwesome.Sharp.dll
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.csproj.AssemblyReference.cache
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Form_AnswerFolders.resources
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Form_StudyMode.resources
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Form_ListQuestion.resources
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Form_CheckOffForm.resources
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Form_Main.resources
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Home.resources
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard_app.Properties.Resources.resources
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.csproj.GenerateResource.cache
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.GeneratedMSBuildEditorConfig.editorconfig
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.AssemblyInfoInputs.cache
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.AssemblyInfo.cs
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.csproj.CoreCompileInputs.cache
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcar.4ECE7F27.Up2Date
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.dll
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\refint\Flashcard app.dll
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.pdb
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\Flashcard app.genruntimeconfig.cache
+E:\Study\Save Visual Studio\C#\Flashcard-app-main\Flashcard-app-main\Flashcard app\obj\Debug\net9.0-windows\ref\Flashcard app.dll
