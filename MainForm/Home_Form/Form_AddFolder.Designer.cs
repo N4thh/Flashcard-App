@@ -36,10 +36,6 @@ namespace Flashcard_app.MainForm.Home_Form
             iconPicture_Name = new IconPictureBox();
             lb_Tile = new Label();
             tb_EditName = new TextBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            tb_EditType = new TextBox();
-            iconPictureBox1 = new IconPictureBox();
-            label2 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             tb_EditNote = new TextBox();
             iconPictureBox2 = new IconPictureBox();
@@ -59,8 +55,6 @@ namespace Flashcard_app.MainForm.Home_Form
             flowLayout_Middle.SuspendLayout();
             tableLayout_Name.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPicture_Name).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             tableLayoutPanel3.SuspendLayout();
@@ -84,7 +78,6 @@ namespace Flashcard_app.MainForm.Home_Form
             // flowLayout_Middle
             // 
             flowLayout_Middle.Controls.Add(tableLayout_Name);
-            flowLayout_Middle.Controls.Add(tableLayoutPanel1);
             flowLayout_Middle.Controls.Add(tableLayoutPanel2);
             flowLayout_Middle.Controls.Add(tableLayoutPanel3);
             flowLayout_Middle.Dock = DockStyle.Fill;
@@ -109,7 +102,7 @@ namespace Flashcard_app.MainForm.Home_Form
             tableLayout_Name.RowCount = 1;
             tableLayout_Name.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayout_Name.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayout_Name.Size = new Size(421, 42);
+            tableLayout_Name.Size = new Size(421, 57);
             tableLayout_Name.TabIndex = 0;
             // 
             // iconPicture_Name
@@ -120,10 +113,10 @@ namespace Flashcard_app.MainForm.Home_Form
             iconPicture_Name.IconChar = IconChar.Edit;
             iconPicture_Name.IconColor = SystemColors.ControlText;
             iconPicture_Name.IconFont = IconFont.Auto;
-            iconPicture_Name.IconSize = 30;
+            iconPicture_Name.IconSize = 34;
             iconPicture_Name.Location = new Point(6, 6);
             iconPicture_Name.Name = "iconPicture_Name";
-            iconPicture_Name.Size = new Size(34, 30);
+            iconPicture_Name.Size = new Size(34, 45);
             iconPicture_Name.TabIndex = 0;
             iconPicture_Name.TabStop = false;
             // 
@@ -134,7 +127,7 @@ namespace Flashcard_app.MainForm.Home_Form
             lb_Tile.Font = new Font("Sans Serif Collection", 6.749999F);
             lb_Tile.Location = new Point(49, 3);
             lb_Tile.Name = "lb_Tile";
-            lb_Tile.Size = new Size(55, 36);
+            lb_Tile.Size = new Size(55, 51);
             lb_Tile.TabIndex = 5;
             lb_Tile.Text = "Title";
             lb_Tile.TextAlign = ContentAlignment.MiddleCenter;
@@ -154,65 +147,6 @@ namespace Flashcard_app.MainForm.Home_Form
             tb_EditName.Enter += tb_EditName_Enter;
             tb_EditName.Leave += tb_EditName_Leave;
             // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.InsetDouble;
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75F));
-            tableLayoutPanel1.Controls.Add(tb_EditType, 2, 0);
-            tableLayoutPanel1.Controls.Add(iconPictureBox1, 0, 0);
-            tableLayoutPanel1.Controls.Add(label2, 1, 0);
-            tableLayoutPanel1.Dock = DockStyle.Top;
-            tableLayoutPanel1.Location = new Point(3, 51);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(421, 42);
-            tableLayoutPanel1.TabIndex = 1;
-            // 
-            // tb_EditType
-            // 
-            tb_EditType.BorderStyle = BorderStyle.None;
-            tb_EditType.Dock = DockStyle.Fill;
-            tb_EditType.Font = new Font("Sans Serif Collection", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tb_EditType.Location = new Point(115, 3);
-            tb_EditType.Margin = new Padding(5, 0, 0, 0);
-            tb_EditType.Name = "tb_EditType";
-            tb_EditType.RightToLeft = RightToLeft.No;
-            tb_EditType.Size = new Size(303, 32);
-            tb_EditType.TabIndex = 7;
-            tb_EditType.Enter += tb_EditType_Enter;
-            tb_EditType.Leave += tb_EditType_Leave;
-            // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = SystemColors.Control;
-            iconPictureBox1.Dock = DockStyle.Fill;
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
-            iconPictureBox1.IconChar = IconChar.BarChart;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
-            iconPictureBox1.IconFont = IconFont.Auto;
-            iconPictureBox1.IconSize = 30;
-            iconPictureBox1.Location = new Point(6, 6);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(34, 30);
-            iconPictureBox1.TabIndex = 0;
-            iconPictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Sans Serif Collection", 6.749999F);
-            label2.Location = new Point(49, 3);
-            label2.Name = "label2";
-            label2.Size = new Size(55, 36);
-            label2.TabIndex = 5;
-            label2.Text = "Type";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.CellBorderStyle = TableLayoutPanelCellBorderStyle.InsetDouble;
@@ -224,11 +158,11 @@ namespace Flashcard_app.MainForm.Home_Form
             tableLayoutPanel2.Controls.Add(iconPictureBox2, 0, 0);
             tableLayoutPanel2.Controls.Add(label4, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Top;
-            tableLayoutPanel2.Location = new Point(3, 99);
+            tableLayoutPanel2.Location = new Point(3, 66);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(421, 42);
+            tableLayoutPanel2.Size = new Size(421, 57);
             tableLayoutPanel2.TabIndex = 2;
             // 
             // tb_EditNote
@@ -253,10 +187,10 @@ namespace Flashcard_app.MainForm.Home_Form
             iconPictureBox2.IconChar = IconChar.StickyNote;
             iconPictureBox2.IconColor = SystemColors.ControlText;
             iconPictureBox2.IconFont = IconFont.Auto;
-            iconPictureBox2.IconSize = 30;
+            iconPictureBox2.IconSize = 34;
             iconPictureBox2.Location = new Point(6, 6);
             iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(34, 30);
+            iconPictureBox2.Size = new Size(34, 45);
             iconPictureBox2.TabIndex = 0;
             iconPictureBox2.TabStop = false;
             // 
@@ -267,7 +201,7 @@ namespace Flashcard_app.MainForm.Home_Form
             label4.Font = new Font("Sans Serif Collection", 6.749999F);
             label4.Location = new Point(49, 3);
             label4.Name = "label4";
-            label4.Size = new Size(55, 36);
+            label4.Size = new Size(55, 51);
             label4.TabIndex = 5;
             label4.Text = "Note";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -288,11 +222,11 @@ namespace Flashcard_app.MainForm.Home_Form
             tableLayoutPanel3.Controls.Add(label6, 1, 0);
             tableLayoutPanel3.Controls.Add(flowLayoutPanel1, 2, 0);
             tableLayoutPanel3.Dock = DockStyle.Top;
-            tableLayoutPanel3.Location = new Point(3, 147);
+            tableLayoutPanel3.Location = new Point(3, 129);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(421, 42);
+            tableLayoutPanel3.Size = new Size(421, 57);
             tableLayoutPanel3.TabIndex = 3;
             // 
             // iconPictureBox3
@@ -303,10 +237,10 @@ namespace Flashcard_app.MainForm.Home_Form
             iconPictureBox3.IconChar = IconChar.FontAwesomeLogoFull;
             iconPictureBox3.IconColor = SystemColors.ControlText;
             iconPictureBox3.IconFont = IconFont.Auto;
-            iconPictureBox3.IconSize = 30;
+            iconPictureBox3.IconSize = 34;
             iconPictureBox3.Location = new Point(6, 6);
             iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(34, 30);
+            iconPictureBox3.Size = new Size(34, 45);
             iconPictureBox3.TabIndex = 0;
             iconPictureBox3.TabStop = false;
             // 
@@ -317,7 +251,7 @@ namespace Flashcard_app.MainForm.Home_Form
             label6.Font = new Font("Sans Serif Collection", 6.749999F);
             label6.Location = new Point(49, 3);
             label6.Name = "label6";
-            label6.Size = new Size(55, 36);
+            label6.Size = new Size(55, 51);
             label6.TabIndex = 5;
             label6.Text = "Colors";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -424,6 +358,7 @@ namespace Flashcard_app.MainForm.Home_Form
             bt_Save.TabIndex = 3;
             bt_Save.Text = "Save";
             bt_Save.UseVisualStyleBackColor = true;
+            bt_Save.Click += bt_Save_Click;
             // 
             // bt_Cancel
             // 
@@ -451,9 +386,6 @@ namespace Flashcard_app.MainForm.Home_Form
             tableLayout_Name.ResumeLayout(false);
             tableLayout_Name.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPicture_Name).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
@@ -471,9 +403,6 @@ namespace Flashcard_app.MainForm.Home_Form
         private Panel pn_Bot;
         private Button bt_Cancel;
         private TableLayoutPanel tableLayout_Name;
-        private TableLayoutPanel tableLayoutPanel1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private Label label2;
         private TableLayoutPanel tableLayoutPanel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private Label label4;
@@ -490,7 +419,6 @@ namespace Flashcard_app.MainForm.Home_Form
         private IconButton iconButton4;
         private IconButton iconButton5;
         private TextBox tb_EditName;
-        private TextBox tb_EditType;
         private TextBox tb_EditNote;
     }
 }

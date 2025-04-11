@@ -91,6 +91,18 @@ namespace Flashcard_app
                     string querry = "Select * From Folder";
                     SqlCommand cmd = new SqlCommand(querry, conn);
                     SqlDataReader reader = cmd.ExecuteReader();
+
+                    //ColorPanel
+                    string colorStr = reader["PanelColor"]?.ToString();
+                    if (!string.IsNullOrEmpty(colorStr))
+                    {
+                        pn_Folder.BackColor = ColorTranslator.FromHtml(colorStr);
+                    }
+                    else
+                    {
+                        pn_Folder.BackColor = Color.LightGray; // màu mặc định nếu không chọn
+                    }
+
                     while (reader.Read())
                     {
                         string folderName = reader["foldername"].ToString();
