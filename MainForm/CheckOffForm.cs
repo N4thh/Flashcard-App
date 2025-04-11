@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace Flashcard_app
 {
@@ -24,9 +25,9 @@ namespace Flashcard_app
             //khởi tạo border
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
-            this.Controls.Add(leftBorderBtn);    
+            this.Controls.Add(leftBorderBtn);
             //Khởi tạo Active khi chạy form        
-             
+
         }
         private struct RGBColors
         {
@@ -36,24 +37,29 @@ namespace Flashcard_app
             public static Color color4 = Color.FromArgb(0, 74, 124);
         }
 
-       
-        
+
+
         private void bt_Home_Click(object sender, EventArgs e)
         {
             Form_Main main = new Form_Main();
             main.Show();
             this.Close();
-            
+
         }
 
         private void bt_checkOFF_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void bt_disCard_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void bt_Search_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

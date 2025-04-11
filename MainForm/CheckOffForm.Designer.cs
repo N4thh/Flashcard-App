@@ -31,7 +31,7 @@
             pn_Menu = new Panel();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
+            bt_Search = new FontAwesome.Sharp.IconButton();
             dataGridView1 = new DataGridView();
             pn_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -42,7 +42,7 @@
             pn_Menu.BackColor = Color.FromArgb(0, 74, 124);
             pn_Menu.Controls.Add(iconButton2);
             pn_Menu.Controls.Add(iconButton1);
-            pn_Menu.Controls.Add(iconButton3);
+            pn_Menu.Controls.Add(bt_Search);
             pn_Menu.Dock = DockStyle.Right;
             pn_Menu.Location = new Point(843, 0);
             pn_Menu.Name = "pn_Menu";
@@ -91,26 +91,27 @@
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton1.UseVisualStyleBackColor = true;
             // 
-            // iconButton3
+            // bt_Search
             // 
-            iconButton3.Dock = DockStyle.Top;
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton3.ForeColor = Color.FromArgb(232, 241, 245);
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Search;
-            iconButton3.IconColor = Color.FromArgb(232, 241, 245);
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 30;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(0, 0);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Padding = new Padding(10, 0, 20, 0);
-            iconButton3.Size = new Size(57, 60);
-            iconButton3.TabIndex = 5;
-            iconButton3.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = true;
+            bt_Search.Dock = DockStyle.Top;
+            bt_Search.FlatAppearance.BorderSize = 0;
+            bt_Search.FlatStyle = FlatStyle.Flat;
+            bt_Search.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bt_Search.ForeColor = Color.FromArgb(232, 241, 245);
+            bt_Search.IconChar = FontAwesome.Sharp.IconChar.Search;
+            bt_Search.IconColor = Color.FromArgb(232, 241, 245);
+            bt_Search.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            bt_Search.IconSize = 30;
+            bt_Search.ImageAlign = ContentAlignment.MiddleLeft;
+            bt_Search.Location = new Point(0, 0);
+            bt_Search.Name = "bt_Search";
+            bt_Search.Padding = new Padding(10, 0, 20, 0);
+            bt_Search.Size = new Size(57, 60);
+            bt_Search.TabIndex = 5;
+            bt_Search.TextAlign = ContentAlignment.MiddleLeft;
+            bt_Search.TextImageRelation = TextImageRelation.ImageBeforeText;
+            bt_Search.UseVisualStyleBackColor = true;
+            bt_Search.Click += bt_Search_Click;
             // 
             // dataGridView1
             // 
@@ -138,7 +139,7 @@
 
         #endregion
         private Panel pn_Menu;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton bt_Search;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private DataGridView dataGridView1;

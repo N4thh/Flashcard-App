@@ -4,6 +4,8 @@ using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 using System;
 using System.Data;
+using Microsoft.Data.SqlClient;
+
 
 namespace Flashcard_app
 {

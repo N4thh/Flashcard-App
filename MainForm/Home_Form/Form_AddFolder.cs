@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Microsoft.Data.SqlClient;
 
 namespace Flashcard_app.MainForm.Home_Form
 {
