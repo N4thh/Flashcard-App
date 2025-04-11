@@ -1,3 +1,4 @@
+﻿
 ﻿using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
@@ -6,6 +7,7 @@ using System.Data;
 
 namespace Flashcard_app
 {
+
     public partial class Form_Main : Form
     {
         private IconButton currentBtn;
@@ -28,9 +30,14 @@ namespace Flashcard_app
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
         }
+        private SqlConnection GetConnection()
+        {
+             string connectionstring = @"Data Source=NHATANH;Initial Catalog=\App Flashcard\;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+             return new SqlConnection(connectionstring);
+        }
 
 
-
+        //Fornt End 
         private void OpenChildForm(Form chilForm)
         {
             if (currentChildForml != null)
@@ -130,7 +137,8 @@ namespace Flashcard_app
 
 
 
-
+                //Back End
+     
 
 
         private void pn_Folder_Paint(object sender, PaintEventArgs e)
@@ -148,6 +156,6 @@ namespace Flashcard_app
 
         }
 
-     
+
     }
 }

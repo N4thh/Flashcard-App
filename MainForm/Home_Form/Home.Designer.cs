@@ -28,14 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            flowLayout_Main = new FlowLayoutPanel();
+            bt_AddMain = new FontAwesome.Sharp.IconButton();
             pn_Folder = new FlowLayoutPanel();
             pn_MenuFolder = new FlowLayoutPanel();
             bt_AddFolder = new FontAwesome.Sharp.IconButton();
             lb_NameFolder = new Label();
-            bt_AddMain = new FontAwesome.Sharp.IconButton();
+            flowLayout_Main.SuspendLayout();
             pn_Folder.SuspendLayout();
             pn_MenuFolder.SuspendLayout();
             SuspendLayout();
+            // 
+            // flowLayout_Main
+            // 
+            flowLayout_Main.Controls.Add(bt_AddMain);
+            flowLayout_Main.Controls.Add(pn_Folder);
+            flowLayout_Main.Dock = DockStyle.Fill;
+            flowLayout_Main.Location = new Point(0, 0);
+            flowLayout_Main.Name = "flowLayout_Main";
+            flowLayout_Main.Size = new Size(900, 528);
+            flowLayout_Main.TabIndex = 7;
+            // 
+            // bt_AddMain
+            // 
+            bt_AddMain.AutoSize = true;
+            bt_AddMain.BackColor = Color.FromArgb(232, 241, 245);
+            bt_AddMain.FlatStyle = FlatStyle.Flat;
+            bt_AddMain.ForeColor = Color.FromArgb(0, 86, 145);
+            bt_AddMain.IconChar = FontAwesome.Sharp.IconChar.Add;
+            bt_AddMain.IconColor = Color.FromArgb(0, 86, 145);
+            bt_AddMain.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            bt_AddMain.IconSize = 30;
+            bt_AddMain.Location = new Point(3, 3);
+            bt_AddMain.Name = "bt_AddMain";
+            bt_AddMain.Size = new Size(46, 38);
+            bt_AddMain.TabIndex = 9;
+            bt_AddMain.UseVisualStyleBackColor = false;
+            bt_AddMain.Click += bt_AddMain_Click;
             // 
             // pn_Folder
             // 
@@ -43,11 +72,12 @@
             pn_Folder.BorderStyle = BorderStyle.FixedSingle;
             pn_Folder.Controls.Add(pn_MenuFolder);
             pn_Folder.Controls.Add(lb_NameFolder);
-            pn_Folder.Location = new Point(99, 31);
+            pn_Folder.Location = new Point(82, 3);
+            pn_Folder.Margin = new Padding(30, 3, 3, 3);
             pn_Folder.Name = "pn_Folder";
             pn_Folder.Size = new Size(197, 207);
-            pn_Folder.TabIndex = 6;
-            pn_Folder.Paint += pn_Folder_Paint;
+            pn_Folder.TabIndex = 11;
+            pn_Folder.Paint += pn_Folder_Paint_1;
             pn_Folder.DoubleClick += FormAnsOpen_DoubleClick;
             // 
             // pn_MenuFolder
@@ -90,44 +120,29 @@
             lb_NameFolder.Text = "Name";
             lb_NameFolder.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // bt_AddMain
-            // 
-            bt_AddMain.AutoSize = true;
-            bt_AddMain.BackColor = Color.FromArgb(232, 241, 245);
-            bt_AddMain.FlatStyle = FlatStyle.Flat;
-            bt_AddMain.ForeColor = Color.FromArgb(0, 86, 145);
-            bt_AddMain.IconChar = FontAwesome.Sharp.IconChar.Add;
-            bt_AddMain.IconColor = Color.FromArgb(0, 86, 145);
-            bt_AddMain.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            bt_AddMain.IconSize = 30;
-            bt_AddMain.Location = new Point(30, 31);
-            bt_AddMain.Name = "bt_AddMain";
-            bt_AddMain.Size = new Size(46, 38);
-            bt_AddMain.TabIndex = 5;
-            bt_AddMain.UseVisualStyleBackColor = false;
-            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(900, 528);
-            Controls.Add(pn_Folder);
-            Controls.Add(bt_AddMain);
+            Controls.Add(flowLayout_Main);
             Name = "Home";
             Text = "HOME";
             Load += Home_Load;
+            flowLayout_Main.ResumeLayout(false);
+            flowLayout_Main.PerformLayout();
             pn_Folder.ResumeLayout(false);
             pn_MenuFolder.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
+        private FlowLayoutPanel flowLayout_Main;
+        private FontAwesome.Sharp.IconButton bt_AddMain;
         private FlowLayoutPanel pn_Folder;
         private FlowLayoutPanel pn_MenuFolder;
         private FontAwesome.Sharp.IconButton bt_AddFolder;
         private Label lb_NameFolder;
-        private FontAwesome.Sharp.IconButton bt_AddMain;
     }
 }

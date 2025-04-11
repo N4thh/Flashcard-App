@@ -1,3 +1,4 @@
+﻿
 ﻿namespace Flashcard_app
 {
     partial class Form_Main
@@ -6,7 +7,7 @@
         ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
- 
+
 
         /// <summary>
         ///  Clean up any resources being used.
