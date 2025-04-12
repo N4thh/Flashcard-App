@@ -82,52 +82,11 @@ namespace Flashcard_app
         }
 
         //LoadNewFolder
-        private void LoadFolder()
+        private void LoadFolders()
         {
-            using (SqlConnection conn = GetConnection())
-            {
-                try
-                {
-                    conn.Open();
-                    string querry = "Select * From Folder";
-                    SqlCommand cmd = new SqlCommand(querry, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    //ColorPanel
-                    string colorStr = reader["PanelColor"]?.ToString();
-                    if (!string.IsNullOrEmpty(colorStr))
-                    {
-                        pn_Folder.BackColor = ColorTranslator.FromHtml(colorStr);
-                    }
-                    else
-                    {
-                        pn_Folder.BackColor = Color.LightGray; // màu mặc định nếu không chọn
-                    }
-
-                    while (reader.Read())
-                    {
-                        string folderName = reader["foldername"].ToString();
-                        int folderId = Convert.ToInt32(reader["folderid"]);
-
-                        Panel panel = new Panel();
-                        panel.Width = 197;
-                        panel.Height = 207;
-                        panel.BackColor = Color.FromArgb(232, 241, 245);
-
-                        Label label = new Label();
-                        label.Text = folderName;
-                        label.Dock = DockStyle.Fill;
-
-                        panel.Controls.Add(label);
-                        flowLayout_Main.Controls.Add(panel);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading folder" + ex.Message);
-                }
-            }
+            
         }
+
 
 
 

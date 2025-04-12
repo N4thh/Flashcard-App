@@ -27,41 +27,9 @@ namespace Flashcard_app.MainForm.Home_Form
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
-        private SqlConnection GetConnection()
-        {
-            string connectionString = @"Data Source=NHATANH;Initial Catalog=AppFlashcard;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-            return new SqlConnection(connectionString);
-        }
 
-        private void AddFolder()
-        {
-            using (SqlConnection conn = GetConnection())
-            {
-                if (string.IsNullOrWhiteSpace(tb_EditName.Text))
-                {
-                    MessageBox.Show("Vui lòng nhập tên folder!");
-                    return;
-                }
-                    try
-                    {
-                    conn.Open();
-                    string querry = "insert into Folder (foldername ,created, Note, PanelColor, islearned) values (@name, @date, @note, @colors ,0)";
-                    SqlCommand cmd = new SqlCommand(querry, conn);
 
-                    cmd.Parameters.AddWithValue("@name", tb_EditName.Text);
-                    cmd.Parameters.AddWithValue("@created", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(tb_EditNote.Text) ? DBNull.Value : tb_EditNote.Text);
-                    cmd.Parameters.AddWithValue("@colors", string.IsNullOrWhiteSpace(selectedColor) ? DBNull.Value : selectedColor);
 
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Thêm folder thành công!");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error creating folder" + ex.Message);
-                }
-            }
-        }
 
         private void bt_Cancel_Click_1(object sender, EventArgs e)
         {
@@ -69,7 +37,32 @@ namespace Flashcard_app.MainForm.Home_Form
         }
         private void bt_Save_Click(object sender, EventArgs e)
         {
-            AddFolder();
+            int newFolderId = 1;
+            using (SqlConnection conn = new SqlConnection(@"Data Source=NHATANH;Initial Catalog=""App Flashcard"";Integrated Security=True;Encrypt=True;Trust Server Certificate=True"))
+            {
+                try
+                {
+                    conn.Open();
+                    string querry = "Insert into Folder(folderid ,foldername, Note, PanelColor, islearned, created)" +
+                                    "Values(@folderid ,@foldername, @Note, @PanelColor, @islearned, @created)  ";
+                    using (SqlCommand cmd = new SqlCommand(querry,conn ))
+                    {
+                        cmd.Parameters.AddWithValue("@folderid", newFolderId);
+                        cmd.Parameters.AddWithValue("@foldername", string.IsNullOrWhiteSpace(tb_EditName.Text) ? DBNull.Value : (object)tb_EditName.Text);
+                        cmd.Parameters.AddWithValue("@Note", string.IsNullOrWhiteSpace(tb_EditNote.Text) ? DBNull.Value : (object)tb_EditNote.Text);
+                        cmd.Parameters.AddWithValue("@PanelColor", selectedColor ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@islearned", 0);
+                        cmd.Parameters.AddWithValue("created", DateTime.Now );
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Add Success"); 
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error creating folder" + ex.Message);
+                }
+            }
         }
 
 
@@ -111,10 +104,37 @@ namespace Flashcard_app.MainForm.Home_Form
             }
         }
 
+     
+        //Button colors 
+        private void bt_Organe_Click(object sender, EventArgs e)
+        {
+            selectedColor = "Coral";
+            
+        }
+
+        private void bt_Red_Click(object sender, EventArgs e)
+        {
+            selectedColor = "Red";
+        }
+
+        private void bt_Green_Click(object sender, EventArgs e)
+        {
+            selectedColor = "Lime";
+        }
+
+        private void bt_Blue_Click(object sender, EventArgs e)
+        {
+            selectedColor = "Turquoise";
+        }
+
+        private void bt_Purple_Click(object sender, EventArgs e)
+        {
+            selectedColor = "Violet";
+        }
+
+
         private void tb_EditName_TextChanged(object sender, EventArgs e)
         {
         }
-
-       
     }
 }

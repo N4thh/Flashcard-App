@@ -44,11 +44,11 @@ namespace Flashcard_app.MainForm.Home_Form
             iconPictureBox3 = new IconPictureBox();
             label6 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            iconButton1 = new IconButton();
-            iconButton2 = new IconButton();
-            iconButton3 = new IconButton();
-            iconButton4 = new IconButton();
-            iconButton5 = new IconButton();
+            bt_Organe = new IconButton();
+            bt_Red = new IconButton();
+            bt_Green = new IconButton();
+            bt_Blue = new IconButton();
+            bt_Purple = new IconButton();
             pn_Bot = new Panel();
             bt_Save = new Button();
             bt_Cancel = new Button();
@@ -258,85 +258,90 @@ namespace Flashcard_app.MainForm.Home_Form
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(iconButton1);
-            flowLayoutPanel1.Controls.Add(iconButton2);
-            flowLayoutPanel1.Controls.Add(iconButton3);
-            flowLayoutPanel1.Controls.Add(iconButton4);
-            flowLayoutPanel1.Controls.Add(iconButton5);
+            flowLayoutPanel1.Controls.Add(bt_Organe);
+            flowLayoutPanel1.Controls.Add(bt_Red);
+            flowLayoutPanel1.Controls.Add(bt_Green);
+            flowLayoutPanel1.Controls.Add(bt_Blue);
+            flowLayoutPanel1.Controls.Add(bt_Purple);
             flowLayoutPanel1.Location = new Point(113, 6);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(302, 30);
             flowLayoutPanel1.TabIndex = 6;
             // 
-            // iconButton1
+            // bt_Organe
             // 
-            iconButton1.BackColor = SystemColors.ButtonFace;
-            iconButton1.Dock = DockStyle.Top;
-            iconButton1.IconChar = IconChar.Circle;
-            iconButton1.IconColor = Color.Salmon;
-            iconButton1.IconFont = IconFont.Solid;
-            iconButton1.IconSize = 20;
-            iconButton1.Location = new Point(3, 3);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(30, 23);
-            iconButton1.TabIndex = 0;
-            iconButton1.UseVisualStyleBackColor = false;
+            bt_Organe.BackColor = SystemColors.ButtonFace;
+            bt_Organe.Dock = DockStyle.Top;
+            bt_Organe.IconChar = IconChar.Circle;
+            bt_Organe.IconColor = Color.Coral;
+            bt_Organe.IconFont = IconFont.Solid;
+            bt_Organe.IconSize = 20;
+            bt_Organe.Location = new Point(3, 3);
+            bt_Organe.Name = "bt_Organe";
+            bt_Organe.Size = new Size(30, 23);
+            bt_Organe.TabIndex = 0;
+            bt_Organe.UseVisualStyleBackColor = false;
+            bt_Organe.Click += bt_Organe_Click;
             // 
-            // iconButton2
+            // bt_Red
             // 
-            iconButton2.BackColor = SystemColors.ButtonHighlight;
-            iconButton2.Dock = DockStyle.Top;
-            iconButton2.IconChar = IconChar.Circle;
-            iconButton2.IconColor = Color.Red;
-            iconButton2.IconFont = IconFont.Solid;
-            iconButton2.IconSize = 20;
-            iconButton2.Location = new Point(39, 3);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(30, 23);
-            iconButton2.TabIndex = 1;
-            iconButton2.UseVisualStyleBackColor = false;
+            bt_Red.BackColor = SystemColors.ButtonHighlight;
+            bt_Red.Dock = DockStyle.Top;
+            bt_Red.IconChar = IconChar.Circle;
+            bt_Red.IconColor = Color.Red;
+            bt_Red.IconFont = IconFont.Solid;
+            bt_Red.IconSize = 20;
+            bt_Red.Location = new Point(39, 3);
+            bt_Red.Name = "bt_Red";
+            bt_Red.Size = new Size(30, 23);
+            bt_Red.TabIndex = 1;
+            bt_Red.UseVisualStyleBackColor = false;
+            bt_Red.Click += bt_Red_Click;
             // 
-            // iconButton3
+            // bt_Green
             // 
-            iconButton3.BackColor = SystemColors.ButtonFace;
-            iconButton3.Dock = DockStyle.Top;
-            iconButton3.IconChar = IconChar.Circle;
-            iconButton3.IconColor = Color.Lime;
-            iconButton3.IconFont = IconFont.Solid;
-            iconButton3.IconSize = 20;
-            iconButton3.Location = new Point(75, 3);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(30, 23);
-            iconButton3.TabIndex = 2;
-            iconButton3.UseVisualStyleBackColor = false;
+            bt_Green.BackColor = SystemColors.ButtonFace;
+            bt_Green.Dock = DockStyle.Top;
+            bt_Green.IconChar = IconChar.Circle;
+            bt_Green.IconColor = Color.Lime;
+            bt_Green.IconFont = IconFont.Solid;
+            bt_Green.IconSize = 20;
+            bt_Green.Location = new Point(75, 3);
+            bt_Green.Name = "bt_Green";
+            bt_Green.Size = new Size(30, 23);
+            bt_Green.TabIndex = 2;
+            bt_Green.UseVisualStyleBackColor = false;
+            bt_Green.Click += bt_Green_Click;
             // 
-            // iconButton4
+            // bt_Blue
             // 
-            iconButton4.BackColor = SystemColors.ButtonFace;
-            iconButton4.Dock = DockStyle.Top;
-            iconButton4.IconChar = IconChar.Circle;
-            iconButton4.IconColor = Color.Turquoise;
-            iconButton4.IconFont = IconFont.Solid;
-            iconButton4.IconSize = 20;
-            iconButton4.Location = new Point(111, 3);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(30, 23);
-            iconButton4.TabIndex = 3;
-            iconButton4.UseVisualStyleBackColor = false;
+            bt_Blue.BackColor = SystemColors.ButtonFace;
+            bt_Blue.Dock = DockStyle.Top;
+            bt_Blue.IconChar = IconChar.Circle;
+            bt_Blue.IconColor = Color.Turquoise;
+            bt_Blue.IconFont = IconFont.Solid;
+            bt_Blue.IconSize = 20;
+            bt_Blue.Location = new Point(111, 3);
+            bt_Blue.Name = "bt_Blue";
+            bt_Blue.Size = new Size(30, 23);
+            bt_Blue.TabIndex = 3;
+            bt_Blue.UseVisualStyleBackColor = false;
+            bt_Blue.Click += bt_Blue_Click;
             // 
-            // iconButton5
+            // bt_Purple
             // 
-            iconButton5.BackColor = SystemColors.ButtonFace;
-            iconButton5.Dock = DockStyle.Top;
-            iconButton5.IconChar = IconChar.Circle;
-            iconButton5.IconColor = Color.Violet;
-            iconButton5.IconFont = IconFont.Solid;
-            iconButton5.IconSize = 20;
-            iconButton5.Location = new Point(147, 3);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(30, 23);
-            iconButton5.TabIndex = 4;
-            iconButton5.UseVisualStyleBackColor = false;
+            bt_Purple.BackColor = SystemColors.ButtonFace;
+            bt_Purple.Dock = DockStyle.Top;
+            bt_Purple.IconChar = IconChar.Circle;
+            bt_Purple.IconColor = Color.Violet;
+            bt_Purple.IconFont = IconFont.Solid;
+            bt_Purple.IconSize = 20;
+            bt_Purple.Location = new Point(147, 3);
+            bt_Purple.Name = "bt_Purple";
+            bt_Purple.Size = new Size(30, 23);
+            bt_Purple.TabIndex = 4;
+            bt_Purple.UseVisualStyleBackColor = false;
+            bt_Purple.Click += bt_Purple_Click;
             // 
             // pn_Bot
             // 
@@ -413,11 +418,11 @@ namespace Flashcard_app.MainForm.Home_Form
         private IconPictureBox iconPicture_Name;
         private Label lb_Tile;
         private FlowLayoutPanel flowLayoutPanel1;
-        private IconButton iconButton1;
-        private IconButton iconButton2;
-        private IconButton iconButton3;
-        private IconButton iconButton4;
-        private IconButton iconButton5;
+        private IconButton bt_Organe;
+        private IconButton bt_Red;
+        private IconButton bt_Green;
+        private IconButton bt_Blue;
+        private IconButton bt_Purple;
         private TextBox tb_EditName;
         private TextBox tb_EditNote;
     }
