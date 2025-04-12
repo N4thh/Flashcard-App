@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using FontAwesome.Sharp;
+using System.Xml;
 
 namespace Flashcard_app
 {
@@ -20,15 +22,15 @@ namespace Flashcard_app
         {
             InitializeComponent();
 
+
         }
-        private SqlConnection GetConnection()
+        private void Home_Load(object sender, EventArgs e)
         {
-            string connectionstring = @"Data Source=NHATANH;Initial Catalog=\App Flashcard\;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
-            return new SqlConnection(connectionstring);
+            LoadFoldersFromDatabase();
         }
 
-
-        private void FormAnsOpen_DoubleClick(object sender, EventArgs e)
+       
+        private void PanelFolder_DoubleClick(object sender, EventArgs e)
         {
             Form_AnswerFolders folder = new Form_AnswerFolders();
             folder.StartPosition = FormStartPosition.Manual;
@@ -46,6 +48,7 @@ namespace Flashcard_app
 
             folder.Show();
         }
+
         private void bt_AddMain_Click(object sender, EventArgs e)
         {
             Form_AddFolder addfolder = new Form_AddFolder();
@@ -54,46 +57,101 @@ namespace Flashcard_app
             //Postion of button 
             Point buttonScreenPoint = bt_AddMain.PointToScreen(Point.Empty);
             int x = buttonScreenPoint.X;
-            int y = buttonScreenPoint.Y + bt_AddMain.Width +5;
+            int y = buttonScreenPoint.Y + bt_AddMain.Width + 5;
 
             addfolder.StartPosition = FormStartPosition.Manual;
             addfolder.Location = new Point(x, y);
 
 
             addfolder.FormBorderStyle = FormBorderStyle.FixedToolWindow; // hoặc None
-            addfolder.ShowDialog();
+            if (addfolder.ShowDialog() == DialogResult.OK) // dùng OK để reload
+            {
+                LoadFoldersFromDatabase();
+            }
 
         }
-        //Add new folder 
-        private void AddnewFolder()
+
+
+        //LoadNewFolder
+
+        private void LoadFoldersFromDatabase()
         {
-            using (SqlConnection conn = GetConnection())
+            using (SqlConnection conn = new SqlConnection(@"Data Source=NHATANH;Initial Catalog=""App Flashcard"";Integrated Security=True;Encrypt=True;Trust Server Certificate=True"))
             {
+                string query = "SELECT folderid, foldername, Note, PanelColor FROM Folder";
+                SqlCommand cmd = new SqlCommand(query, conn);
+
                 try
                 {
-                    string querry = "insert into Folder (foldername,  created,islearned) values (@name, @date, @status) ";
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
+                    while (reader.Read())
+                    {
+                        // Create folder panel (FlowLayoutPanel)
+                        FlowLayoutPanel panelFolder = new FlowLayoutPanel()
+                        {
+                            Height = 210,
+                            Width = 200,
+                            FlowDirection = FlowDirection.TopDown,
+                            WrapContents = false,
+                            AutoScroll = false,
+                            Margin = new Padding(30, 3, 3, 3),
+                            BackColor = Color.FromArgb(232, 241, 245),
+                            Tag = reader["folderid"],
+                            BorderStyle = BorderStyle.FixedSingle,                           
+                        };
+                        panelFolder.DoubleClick += PanelFolder_DoubleClick;
+
+                        // Create label (folder name)
+                        Label labelFolder = new Label()
+                        {
+                            Text = reader["foldername"].ToString(),
+                            Font = new Font("Sans Serif Collection", 12, FontStyle.Regular),
+                            ForeColor = Color.FromArgb(0, 86, 145),
+                            TextAlign = ContentAlignment.MiddleCenter,
+                            AutoSize = false,
+                            Width = 190,
+                            Height = 30,
+                            Margin = new Padding(5, 5, 5, 5),
+                            Dock = DockStyle.Top
+                        };
+
+                        // Create icon button (menu) positioned at top-right
+                        IconButton iconSetting = new IconButton()
+                        {
+                            Size = new Size(30, 30),
+                            IconColor = Color.FromArgb(0, 86, 145),
+                            IconSize = 30,
+                            IconChar = IconChar.EllipsisH,
+                            FlatStyle = FlatStyle.Flat,
+                            BackColor = Color.Transparent,
+                            Anchor = AnchorStyles.Top | AnchorStyles.Right,
+                            Margin = new Padding(160, 5, 5, 5) 
+                        };
+
+                        iconSetting.FlatAppearance.BorderSize = 0;
+
+                        // Add to container
+                        panelFolder.Controls.Add(iconSetting);   
+                        panelFolder.Controls.Add(labelFolder);   
+
+                        flowLayout_Main.Controls.Add(panelFolder);
+                    }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error creating new folder");
+                    MessageBox.Show("Error loading folder: " + ex.Message);
                 }
             }
         }
 
-        //LoadNewFolder
-        private void LoadFolders()
-        {
-            
-        }
 
 
 
 
-        private void Home_Load(object sender, EventArgs e)
-        {
 
-        }
+
         private void pn_Folder_Paint(object sender, PaintEventArgs e)
         {
 
@@ -104,6 +162,9 @@ namespace Flashcard_app
 
         }
 
-       
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

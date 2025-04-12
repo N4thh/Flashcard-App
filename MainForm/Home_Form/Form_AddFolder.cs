@@ -33,21 +33,30 @@ namespace Flashcard_app.MainForm.Home_Form
 
         private void bt_Cancel_Click_1(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.OK;
             this.Close();
         }
         private void bt_Save_Click(object sender, EventArgs e)
         {
-            int newFolderId = 1;
+          
             using (SqlConnection conn = new SqlConnection(@"Data Source=NHATANH;Initial Catalog=""App Flashcard"";Integrated Security=True;Encrypt=True;Trust Server Certificate=True"))
             {
                 try
                 {
                     conn.Open();
+                    int newFolderId = 1; 
+                    string getMaxIdQuery = "SELECT ISNULL(MAX(folderid), 0) + 1 FROM Folder";
+                    using (SqlCommand getIdCmd = new SqlCommand(getMaxIdQuery, conn))
+                    {
+                        newFolderId = (int)getIdCmd.ExecuteScalar();
+                    }
+
                     string querry = "Insert into Folder(folderid ,foldername, Note, PanelColor, islearned, created)" +
                                     "Values(@folderid ,@foldername, @Note, @PanelColor, @islearned, @created)  ";
                     using (SqlCommand cmd = new SqlCommand(querry,conn ))
                     {
-                        cmd.Parameters.AddWithValue("@folderid", newFolderId);
+                  
+                        cmd.Parameters.AddWithValue("@folderid", newFolderId);                                                                  
                         cmd.Parameters.AddWithValue("@foldername", string.IsNullOrWhiteSpace(tb_EditName.Text) ? DBNull.Value : (object)tb_EditName.Text);
                         cmd.Parameters.AddWithValue("@Note", string.IsNullOrWhiteSpace(tb_EditNote.Text) ? DBNull.Value : (object)tb_EditNote.Text);
                         cmd.Parameters.AddWithValue("@PanelColor", selectedColor ?? (object)DBNull.Value);
