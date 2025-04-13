@@ -30,6 +30,7 @@
         {
             flowLayout_Main = new FlowLayoutPanel();
             bt_AddMain = new FontAwesome.Sharp.IconButton();
+            iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             flowLayout_Main.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,6 +60,15 @@
             bt_AddMain.UseVisualStyleBackColor = false;
             bt_AddMain.Click += bt_AddMain_Click;
             // 
+            // iconMenuItem1
+            // 
+            iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconMenuItem1.IconColor = Color.Black;
+            iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItem1.Name = "iconMenuItem1";
+            iconMenuItem1.Size = new Size(32, 19);
+            iconMenuItem1.Text = "iconMenuItem1";
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -77,5 +87,6 @@
 
         private FlowLayoutPanel flowLayout_Main;
         private FontAwesome.Sharp.IconButton bt_AddMain;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
     }
 }

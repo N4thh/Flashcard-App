@@ -64,7 +64,8 @@ namespace Flashcard_app.MainForm.Home_Form
                         cmd.Parameters.AddWithValue("created", DateTime.Now );
 
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Add Success"); 
+
+                        DialogResult = DialogResult.OK;
                     }
                 }
                 catch (Exception ex)

@@ -76,6 +76,7 @@ namespace Flashcard_app
 
         private void LoadFoldersFromDatabase()
         {
+     
             using (SqlConnection conn = new SqlConnection(@"Data Source=NHATANH;Initial Catalog=""App Flashcard"";Integrated Security=True;Encrypt=True;Trust Server Certificate=True"))
             {
                 string query = "SELECT folderid, foldername, Note, PanelColor FROM Folder";
@@ -84,6 +85,16 @@ namespace Flashcard_app
                 try
                 {
                     conn.Open();
+
+                    //Remove the old panel when refresh
+                    for (int i = flowLayout_Main.Controls.Count - 1; i >= 0; i--)  //duyệt ngược
+                    {
+                        Control ctrl = flowLayout_Main.Controls[i];
+                        if (ctrl is FlowLayoutPanel)
+                        {
+                            flowLayout_Main.Controls.RemoveAt(i);
+                        }
+                    }
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -97,17 +108,37 @@ namespace Flashcard_app
                             WrapContents = false,
                             AutoScroll = false,
                             Margin = new Padding(30, 3, 3, 3),
-                            BackColor = Color.FromArgb(232, 241, 245),
+                            //Color.FromArgb(232, 241, 245),
                             Tag = reader["folderid"],
-                            BorderStyle = BorderStyle.FixedSingle,                           
-                        };
-                        panelFolder.DoubleClick += PanelFolder_DoubleClick;
 
+                        };
+                        IconButton iconButton = new IconButton()
+                        {
+                            Height = 94,
+                            Width = 197,                                                    
+                            IconChar = IconChar.FolderBlank,
+                            IconSize = 100,
+                            Dock = DockStyle.Top,
+                            IconFont = IconFont.Solid,
+                            FlatStyle = FlatStyle.Flat,
+                        };
+                        iconButton.FlatAppearance.BorderSize = 0;       
+                        iconButton.Click += PanelFolder_DoubleClick;
+
+                        //if Panel color not null -> get color  // else is set df color
+                        if (!reader.IsDBNull(reader.GetOrdinal("PanelColor")))
+                        {
+                            iconButton.IconColor = Color.FromName(reader["PanelColor"].ToString());
+                        }
+                        else
+                        {
+                            iconButton.IconColor = Color.FromArgb(0, 86, 145); // fallback màu mặc định
+                        }
                         // Create label (folder name)
                         Label labelFolder = new Label()
                         {
                             Text = reader["foldername"].ToString(),
-                            Font = new Font("Sans Serif Collection", 12, FontStyle.Regular),
+                            Font = new Font("Sans Serif Collection", 11, FontStyle.Regular),
                             ForeColor = Color.FromArgb(0, 86, 145),
                             TextAlign = ContentAlignment.MiddleCenter,
                             AutoSize = false,
@@ -120,9 +151,9 @@ namespace Flashcard_app
                         // Create icon button (menu) positioned at top-right
                         IconButton iconSetting = new IconButton()
                         {
-                            Size = new Size(30, 30),
+                            Size = new Size(20, 20),
                             IconColor = Color.FromArgb(0, 86, 145),
-                            IconSize = 30,
+                            IconSize = 20,
                             IconChar = IconChar.EllipsisH,
                             FlatStyle = FlatStyle.Flat,
                             BackColor = Color.Transparent,
@@ -133,7 +164,8 @@ namespace Flashcard_app
                         iconSetting.FlatAppearance.BorderSize = 0;
 
                         // Add to container
-                        panelFolder.Controls.Add(iconSetting);   
+                        panelFolder.Controls.Add(iconSetting);
+                        panelFolder.Controls.Add(iconButton);
                         panelFolder.Controls.Add(labelFolder);   
 
                         flowLayout_Main.Controls.Add(panelFolder);
